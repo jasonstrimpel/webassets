@@ -98,7 +98,7 @@ class UrlHunk(BaseHunk):
 
     def data(self):
         if not hasattr(self, '_data'):
-            request = URLRequest(self.url)
+            request = URLRequest(self.url, headers={'User-Agent': 'Mozilla/5.0'})
 
             # Look in the cache for etag / last modified headers to use
             # TODO: "expires" header could be supported
